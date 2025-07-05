@@ -18,16 +18,11 @@ let config_json = templates[Astro.currentLocale] || templates.en;
     <link
       rel="icon"
       type="image/svg+xml"
-      href={"/steam-review-template/favicon.svg"}
+      href={"/steam-review-template-zh/favicon.svg"}
     />
     <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/steam-review-template/sitemap-index.xml" />
+    <link rel="sitemap" href="/steam-review-template-zh/sitemap-index.xml" />
     <title>{title}</title>
-    <script
-      defer
-      data-domain="vojtastruhar.github.io/steam-review-template"
-      src="https://analytics.vojtechstruhar.com/js/script.outbound-links.tagged-events.js"
-    ></script>
   </head>
   <body>
     <slot />
@@ -79,7 +74,7 @@ let config_json = templates[Astro.currentLocale] || templates.en;
 
       output.innerHTML += `\n`;
       output.innerHTML += `---{ ${config_json.author} }---\n`;
-      output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
+      output.innerHTML += `☑ https://samhou0.github.io/steam-review-template-zh \n`;
     }
   }
 
