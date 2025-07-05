@@ -1,0 +1,53 @@
+---
+import config_json from "../../review_templates/template_en.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Steam 评价模板">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Review Template }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ 极佳</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+      这个小工具简化了复制粘贴 Steam 评价的流程（相信我，你现在所在的网站<em>就是</em>你正在找的东西）。它们很有趣，所以我做了这个避免大量复制粘贴。&nbsp;😆
+    </p>
+    <p>
+      代码是开源的&rarr; <a
+        href="https://github.com/SamHou0/steam-review-template-zh"
+      >
+        去 Github 看看吧！</a
+      >!
+    </p>
+    <p>
+      生成结果尾部有一行致谢。
+      你可以不删掉它，但这么做我会很感激你的。谢谢！
+    </p>
+    {
+      config_json.categories.map((category, index) => (
+        <OptionForm category={category} index={index} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        生成 Steam 评论！</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        点此复制</button
+      >
+    </div>
+  </div>
+</PageLayout>
